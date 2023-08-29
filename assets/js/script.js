@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
             checkAnswer();
         }
 
-
+    });
 });
+
+
 
 /**
  * The main game "loop", called when the script is first loaded
@@ -37,6 +39,20 @@ function runGame(gameType) {
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
 
+    let dNum1 = (num1 * num2);
+    let dNum2 = (num2);
+    if (dNum1 % 2 == 0) {
+        
+    } else {
+        dNum1++
+    }
+    
+    if (dNum2 % 2 == 0) {
+        
+    } else {
+        dNum2++
+    }
+
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
     } else if (gameType === "multiply") {
@@ -44,7 +60,7 @@ function runGame(gameType) {
     } else if (gameType === "subtract" ) {
         displaySubtractQuestion(num1, num2);
     } else if (gameType === "division") {
-        displayDivisionQuestion(num1, num2);
+        displayDivisionQuestion(dNum1, dNum2);
     } else  {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting!`;
